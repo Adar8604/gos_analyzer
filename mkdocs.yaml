@@ -18,8 +18,24 @@ plugins:
 nav:
   - Home: index.md
   - Tutorials:
-      - Getting Started: tutorials/getting-started.md
+      - Getting Started: tutorials/getting_started.md
   - API:
-      - Extractor: api/extractor.md
-      - Gliner: api/gliner.md
-      - Account Extractor: api/account_extractor.md
+    - Financial:
+      - Amount Extractor: api/financial/amount_extractor.md
+      - Extractor: api/financial/extractor.md
+    - Linker:
+      - Backend Processor: api/linker/backend_processor.md
+    - NER:
+      - Gliner Service: api/ner/gliner_service.md
+      - Account IFSC Extractor: api/ner/account_ifsc_extractor.md
+      - IFSC Mapper: api/ner/ifsc_mapper.md
+      - Regex Extractor: api/ner/regex-extractor.md
+      - Formatter: api/ner/formatter.md
+    - SQA:
+      - Retreiver: api/sqa/retreiver.md
+      - Scorer: api/sqa/scorer.md
+      - Segmenter: api/sqa/segmenter.md
+      - UI: api/sqa/ui.md
+      - Utils: api/sqa/utils.md
+    - Main:
+      - api/main.md
