@@ -1,6 +1,9 @@
 import re
 
 class AccountIFSCExtractor:
+    """
+    Extracts IFSC codes from text.
+    """
 
     @staticmethod
     def extract(text):

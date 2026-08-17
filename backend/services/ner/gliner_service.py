@@ -5,6 +5,7 @@ from services.ner.regex_extractor import RegexExtractor
 
 
 class NERService:
+    """Service for performing named entity recognition using GLiNER."""
 
     _model = None
     def __init__(self):
@@ -22,6 +23,14 @@ class NERService:
         chunk_size=300,
         overlap=50
     ):
+        """Process text and extract named entities.
+
+        Args:
+            text: Input text to analyze.
+
+        Returns:
+            Extracted entities.
+        """
 
         words = text.split()
 
@@ -42,6 +51,17 @@ class NERService:
         return chunks
 
     def mask_regex_entities(self, text, regex_entities):
+        """
+        Takes the given text and entities returned by regex, and masks them with
+        placeholder to prevent the LLM from learning patterns in names, race,
+        gender, location etc.
+
+        args:
+            text: Input text to analyze
+
+        returns:
+            Same text but with names entities masked.
+        """
 
         for entity in regex_entities:
 
@@ -59,6 +79,16 @@ class NERService:
         return text
 
     def extract_entities(self, text, labels):
+        """
+        Takes the given text and extracts entities associated with
+        the provided labels
+
+        args:
+            text: Input text to extract entities from
+        
+        returns:
+            List of final entities extracted.
+        """
 
         # Regex Extraction
         regex_entities = RegexExtractor.extract(text)
