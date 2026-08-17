@@ -7,8 +7,8 @@ from sentence_transformers import SentenceTransformer
 BASE_DIR = Path(__file__).resolve().parent
 
 # Files
-INDEX_PATH = BASE_DIR / "lea_guidelines_2.faiss"
-METADATA_PATH = BASE_DIR / "lea_metadata_2.json"
+INDEX_PATH = BASE_DIR / "vectorstore/lea_guidelines_2.faiss"
+METADATA_PATH = BASE_DIR / "vectorstore/lea_metadata_2.json"
 
 # Load FAISS index
 index = faiss.read_index(str(INDEX_PATH))

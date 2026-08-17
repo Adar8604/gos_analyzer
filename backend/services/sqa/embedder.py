@@ -45,7 +45,7 @@ index.add(embeddings)
 print(f"Indexed {index.ntotal} guidelines.")
 
 # Save Index
-faiss.write_index(index, "lea_guidelines_2.faiss")
+faiss.write_index(index, "vectorstore/lea_guidelines_2.faiss")
 
 # Save metadata separately
 with open("lea_metadata_2.json", "w", encoding="utf-8") as f:
