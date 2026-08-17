@@ -1,24 +1,8 @@
 # Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
+__pycache__
 
 # Virtual environments
-venv/
-.venv/
-env/
-ENV/
-
-# Python caches / tooling
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-htmlcov/
-
-# Jupyter
-.ipynb_checkpoints/
+.venv
 
 # Test files
 Test/
@@ -27,14 +11,5 @@ Test/
 .vscode/
 .idea/
 
-# macOS
-.DS_Store
-
-# Logs
-*.log
-
 # Environment / secrets
 .env
-.env.*
-*.key
-*.pem
