@@ -1,3 +1,3 @@
 # Retreiver
 
-::: backend.services.sqa.retreiver
+::: backend.services.sqa.retriever

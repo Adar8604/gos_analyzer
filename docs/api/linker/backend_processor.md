@@ -1,3 +1,3 @@
 # Backend Processor
 
-::: backend.services.ner.backend_processor
+::: backend.services.linker.backend_processor

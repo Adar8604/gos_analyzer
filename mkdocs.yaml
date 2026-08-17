@@ -32,7 +32,7 @@ nav:
       - Regex Extractor: api/ner/regex-extractor.md
       - Formatter: api/ner/formatter.md
     - SQA:
-      - Retreiver: api/sqa/retreiver.md
+      - Retreiver: api/sqa/retriever.md
       - Scorer: api/sqa/scorer.md
       - Segmenter: api/sqa/segmenter.md
       - UI: api/sqa/ui.md
