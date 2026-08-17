@@ -1,0 +1,36 @@
+parameter: Evidence
+
+purpose: >
+  Evaluate whether the STR provides sufficient factual evidence for an
+  AML investigator to understand and verify the suspicious activity.
+
+required_items:
+  - Transaction amount or value is mentioned
+  - Transaction date or time period is mentioned
+  - Source of funds or originating account is identified
+  - Destination of funds or beneficiary is identified
+  - Mode of transaction is specified (cash, IMPS, NEFT, RTGS, UPI, cheque, etc.)
+  - Reason for suspicion is clearly explained
+  - Related or linked transactions are described, if applicable
+  - Previous suspicious activity or account history is mentioned, if available
+
+important:
+  - Evaluate only the evidence supporting the suspicion.
+  - Ignore grammar, formatting, spelling, and writing style.
+  - Treat an item as Present if the information is reasonably available, even if not fully detailed.
+  - Do not mark "Linked transactions" or "Previous suspicious activity" as Missing if they are genuinely not applicable or the STR explicitly states none were found.
+  - Focus on whether sufficient evidence exists to support the reported suspicion.
+
+scoring:
+  5:
+    description: The STR provides comprehensive evidence supporting the suspicion with little or no important information missing.
+  4:
+    description: The STR provides strong supporting evidence, with only minor omissions that do not affect understanding.
+  3:
+    description: The STR contains adequate evidence but is missing some supporting information that reduces completeness.
+  2:
+    description: The STR contains limited evidence and important supporting information is missing, making the suspicion difficult to verify.
+  1:
+    description: Very little factual evidence is provided and the suspicion is weakly supported.
+  0:
+    description: No meaningful evidence is provided to support the suspicion.

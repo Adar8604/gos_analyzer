@@ -1,0 +1,32 @@
+parameter: Clarity
+
+purpose: >
+  Evaluate whether the narrative is clear, understandable and logically
+  written.
+
+required_items:
+  - Suspicious activity is clearly described
+  - Reason for suspicion is explained
+  - Narrative follows a logical flow
+  - Terminology is consistent
+  - No major ambiguity affecting understanding
+  - Narrative is understandable despite grammar or formatting issues
+
+important:
+  - Ignore grammar mistakes, long sentences, formatting, and repetition.
+  - Ignore customer profile, KYC details, transaction tables, and account information.
+  - Focus only on whether the suspicious activity and the reason for suspicion are understandable.
+
+scoring:
+  5:
+    description: Very clear narrative.
+  4:
+    description: Minor ambiguity.
+  3:
+    description: Moderate ambiguity.
+  2:
+    description: Difficult to understand.
+  1:
+    description: Poorly written.
+  0:
+    description: Unreadable.

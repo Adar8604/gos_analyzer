@@ -1,0 +1,34 @@
+parameter: Justification
+
+purpose: >
+  Evaluate whether the STR clearly explains why the reported activity is
+  considered suspicious and whether the conclusion is supported by
+  observable facts and transaction behaviour.
+
+required_items:
+  - Suspicious transaction patterns or indicators are identified
+  - Behaviour is inconsistent with the customer's declared profile, business, occupation, or expected activity
+  - Supporting facts or transaction evidence are provided
+  - The suspicious activity is logically linked to the stated reason for suspicion
+  - Relevant AML concepts or suspicious behaviours are identified where applicable (e.g., layering, pass-through account, mule account, round tripping, shell entity, hawala, structuring, identity fraud)
+
+important:
+  - Evaluate the quality of the reasoning, not whether specific keywords are present.
+  - Do not require terms such as "money laundering" or "layering" unless they are supported by the STR.
+  - Consider AML concepts Present if they are clearly described, even if different terminology is used.
+  - The justification should be based on observable facts rather than speculation.
+  - Ignore grammar, formatting, and writing style.
+
+scoring:
+  5:
+    description: The suspicion is convincingly justified with clear reasoning, relevant transaction patterns, and strong supporting evidence.
+  4:
+    description: The suspicion is well justified with only minor gaps in reasoning or supporting evidence.
+  3:
+    description: The suspicion is reasonably justified but requires additional explanation or supporting facts.
+  2:
+    description: The suspicion is weakly justified and relies on limited reasoning or insufficient supporting evidence.
+  1:
+    description: The suspicion is poorly justified with little connection between the facts and the reported concern.
+  0:
+    description: No meaningful justification is provided for why the activity is suspicious.

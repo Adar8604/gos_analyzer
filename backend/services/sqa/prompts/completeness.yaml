@@ -1,0 +1,38 @@
+parameter: Completeness
+
+purpose: >
+  Evaluate whether the STR contains the essential information required
+  for an AML investigator to understand the customer, transactions, and
+  the basis for reporting the suspicious activity.
+
+required_items:
+  - Customer identity (name or entity name)
+  - Customer identifier (Customer ID or equivalent)
+  - Account number
+  - Bank or reporting branch
+  - Customer identification (PAN, Aadhaar, Passport, or equivalent)
+  - Transaction date or reporting period
+  - Transaction amount or turnover
+  - Grounds of suspicion
+  - Sufficient transaction details (source, destination, or transaction mode)
+
+important:
+  - Evaluate only whether the required information is present.
+  - Treat an item as Present if equivalent information is provided (for example, a reporting period instead of an exact transaction date, or turnover instead of individual transaction amounts).
+  - Do not penalize the STR if the same information appears in a different section.
+  - Ignore writing style, grammar, formatting, and ordering of information.
+  - Focus on whether an AML investigator has sufficient information to understand the reported case.
+
+scoring:
+  5:
+    description: The STR contains all essential information required to understand and investigate the reported suspicious activity.
+  4:
+    description: The STR is largely complete with only minor information missing that does not affect understanding.
+  3:
+    description: The STR contains most essential information but has noticeable omissions that reduce completeness.
+  2:
+    description: Significant required information is missing, making the STR only partially complete.
+  1:
+    description: The STR is highly incomplete and lacks most essential information.
+  0:
+    description: The STR contains almost no useful information required to understand or investigate the suspicious activity.

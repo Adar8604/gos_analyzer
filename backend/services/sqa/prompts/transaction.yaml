@@ -1,0 +1,38 @@
+parameter: Transaction Analysis
+
+purpose: >
+  Evaluate whether the STR adequately analyses the suspicious
+  transactions by describing the transaction behaviour, identifying
+  unusual patterns, and explaining why the activity is suspicious.
+
+required_items:
+  - Transaction amount or turnover
+  - Transaction frequency or volume
+  - Suspicious transaction pattern (e.g., rapid credits/debits, structuring, pass-through activity, layering)
+  - Source or destination of funds (counterparties or beneficiaries)
+  - Cash or non-cash transaction analysis
+  - Geographic or jurisdictional risk, if applicable
+  - High-risk indicators or unusual transaction characteristics
+
+important:
+  - Evaluate the quality of the transaction analysis, not just whether transactions are listed.
+  - Treat an item as Present if equivalent information is provided.
+  - Do not mark "Cash or non-cash transaction analysis" as Missing if the STR clearly states there were no cash transactions.
+  - Do not mark "Geographic risk" as Missing if geography is not relevant to the reported suspicion.
+  - High-risk indicators include unusual turnover, rapid movement of funds, multiple counterparties, pass-through behaviour, business profile mismatch, circular transactions, layering, structuring, or other suspicious AML patterns.
+  - Ignore grammar, formatting, and writing style.
+  - Focus on whether an AML investigator can understand how the transactions support the reported suspicion.
+
+scoring:
+  5:
+    description: The STR provides a comprehensive analysis of the suspicious transactions with clear patterns, supporting facts, and risk indicators.
+  4:
+    description: The transaction analysis is strong with only minor details missing.
+  3:
+    description: The STR contains adequate transaction analysis but important supporting details or patterns are missing.
+  2:
+    description: The transaction analysis is limited and provides insufficient explanation of the suspicious activity.
+  1:
+    description: Very little transaction analysis is provided and the suspicious activity is weakly explained.
+  0:
+    description: No meaningful transaction analysis is provided.

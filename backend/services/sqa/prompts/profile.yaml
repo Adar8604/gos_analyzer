@@ -1,0 +1,37 @@
+parameter: Customer Profile
+
+purpose: >
+  Evaluate whether the STR provides sufficient customer background to
+  understand whether the reported transactions are consistent with the
+  customer's expected financial behaviour.
+
+required_items:
+  - Occupation, profession, or nature of business
+  - Business or customer category (individual, company, firm, trust, etc.)
+  - Declared income, turnover, or financial profile
+  - KYC or customer due diligence status
+  - Risk category or customer risk rating
+  - Expected account activity or transaction behaviour
+
+important:
+  - Evaluate only the completeness of the customer profile.
+  - Treat an item as Present if equivalent information is provided.
+  - For business entities, business activity may replace occupation.
+  - For individuals, occupation may replace business activity.
+  - Expected account behaviour may be explicitly stated or reasonably inferred from the declared occupation, business, or income profile.
+  - Ignore grammar, formatting, and writing style.
+  - Focus on whether an AML investigator has enough customer background to assess whether the transactions are unusual.
+
+scoring:
+  5:
+    description: The STR provides a comprehensive customer profile that clearly establishes the customer's expected financial behaviour.
+  4:
+    description: The customer profile is largely complete with only minor information missing.
+  3:
+    description: The STR contains sufficient customer information but important profile details are missing.
+  2:
+    description: The customer profile is limited and provides insufficient context to properly assess the suspicious activity.
+  1:
+    description: Very little customer background is provided, making profile assessment difficult.
+  0:
+    description: No meaningful customer profile information is provided.

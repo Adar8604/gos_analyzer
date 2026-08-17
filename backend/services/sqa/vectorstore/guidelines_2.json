@@ -1,0 +1,438 @@
+[
+  {
+    "id": 1,
+    "category": "Geographical Location",
+    "guideline": "Transactions done in a branch located in a terrorist, Maoist, or insurgency affected area.",
+    "embedding_text": "Transactions conducted through branches located in terrorist, Maoist, insurgency affected or conflict-prone regions. Financial activity originating from high-risk security zones, Naxal-affected districts, disturbed areas, or locations vulnerable to extremist or insurgent operations.",
+    "target_leas": ["IB", "NIA", "State Police"],
+    "conditions": ["Applicable only if specifically mentioned in Grounds of Suspicion (GoS)."]
+  },
+  {
+    "id": 2,
+    "category": "Geographical Location",
+    "guideline": "Transactions done in a branch located in a border area.",
+    "embedding_text": "Transactions originating from branches located in border districts, frontier regions, or areas adjoining international borders. Financial activity occurring in geographically sensitive border locations with potential cross-border movement of funds or goods.",
+    "target_leas": ["IB", "State Police"],
+    "conditions": []
+  },
+  {
+    "id": 3,
+    "category": "Alert / Watchlist",
+    "guideline": "STR filed in response to an FIU Alert.",
+    "embedding_text": "Suspicious transaction reported following an FIU alert, FIU notification, or FIU watchlist trigger. STR generated in response to intelligence shared by the Financial Intelligence Unit for further regulatory or law enforcement action.",
+    "target_leas": ["Requesting FIU Analyst/Vertical"],
+    "conditions": ["Transferred to requesting FIU analyst/vertical for dissemination decision."]
+  },
+  {
+    "id": 4,
+    "category": "Alert / Watchlist",
+    "guideline": "Reported person matches UNSCR list.",
+    "embedding_text": "Customer, beneficiary, or related party identified as matching a United Nations Security Council sanctions list or designated terrorist list. Financial activity involving sanctioned individuals, entities, or organizations subject to international restrictions.",
+    "target_leas": ["IB", "NIA"],
+    "conditions": []
+  },
+  {
+    "id": 5,
+    "category": "Alert / Watchlist",
+    "guideline": "Reported person identified through adverse media.",
+    "embedding_text": "Customer or associated entity identified through adverse media, negative press, public allegations, or credible news reports indicating possible criminal, fraudulent, financial, or regulatory concerns requiring enhanced scrutiny.",
+    "target_leas": [],
+    "conditions": ["Decision based on related media reports."]
+  },
+  {
+    "id": 6,
+    "category": "Alert / Watchlist",
+    "guideline": "STR filed following advice/order from regulator.",
+    "embedding_text": "Suspicious transaction reported following instructions, advisory, inspection findings, or supervisory directions issued by RBI, SEBI, or another financial regulator. Regulatory-triggered STR requiring further review and dissemination.",
+    "target_leas": ["Concerned Regulator as Mentioned in STR"],
+    "conditions": ["Additional dissemination depends on STR contents."]
+  },
+  {
+    "id": 7,
+    "category": "Alert / Watchlist",
+    "guideline": "Reactive STR filed in response to LEA enquiry.",
+    "embedding_text": "Suspicious transaction report generated in response to a request, enquiry, investigation, or information sought by a law enforcement agency. STR filed as part of an ongoing investigation or LEA intelligence request.",
+    "target_leas": ["Concerned LEA as Mentioned in STR"],
+    "conditions": ["Additional dissemination depends on STR contents."]
+  },
+  {
+    "id": 8,
+    "category": "Fraud",
+    "guideline": "Banking fraud where the bank is the victim.",
+    "embedding_text": "Fraud resulting in financial loss or operational risk to the bank through unauthorized transactions, forged documents, fraudulent loans, internal manipulation, or banking scams. Criminal activity directly targeting the banking institution.",
+    "target_leas": ["ED", "CBI", "State Police", "CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 9,
+    "category": "Fraud",
+    "guideline": "Banking fraud where the public is the victim.",
+    "embedding_text": "Fraud targeting bank customers through phishing, social engineering, account takeover, identity misuse, unauthorized banking transactions, digital payment fraud, or coordinated scams resulting in financial loss to the public.",
+    "target_leas": ["State Police", "IB", "CBI", "ED"],
+    "conditions": [
+      "IB only if national security angle exists.",
+      "ED if large-scale coordinated fraud is suspected."
+    ]
+  },
+  {
+    "id": 10,
+    "category": "Entity Type",
+    "guideline": "MLM activity.",
+    "embedding_text": "Financial activity involving multi-level marketing, pyramid schemes, referral-based income models, direct selling networks, commission chains, recruitment-driven business structures, or fund movement associated with MLM or Ponzi-style operations.",
+    "target_leas": ["State Police", "CBDT", "ED"],
+    "conditions": ["ED only if fraud or other offence is reported."]
+  },
+  {
+    "id": 11,
+    "category": "Entity Type",
+    "guideline": "Chit funds.",
+    "embedding_text": "Financial activity involving chit funds, rotating savings and credit schemes, committee funds, informal pooled investments, or collective contribution-based financial arrangements. Transactions associated with unregulated or suspicious chit fund operations and fund mobilization.",
+    "target_leas": ["State Chief Secretary", "CBDT", "State Police", "ED", "CBI", "RBI"],
+    "conditions": [
+      "State Police, ED and CBI only if fraud/offence exists.",
+      "RBI under Chit Funds Act inspection powers."
+    ]
+  },
+  {
+    "id": 12,
+    "category": "Entity Type",
+    "guideline": "Politically Exposed Person other than government servant.",
+    "embedding_text": "Transactions involving a Politically Exposed Person (PEP), individuals with political influence, politically connected persons, or close associates and family members of politically exposed individuals. Financial activity requiring enhanced due diligence due to political exposure.",
+    "target_leas": ["CBDT", "CBI"],
+    "conditions": ["CBI only if under Prevention of Corruption Act jurisdiction."]
+  },
+  {
+    "id": 13,
+    "category": "Entity Type",
+    "guideline": "Political party.",
+    "embedding_text": "Transactions involving political parties, political organizations, election-related entities, political funding, campaign finances, donations, or financial activity associated with registered or unregistered political organizations.",
+    "target_leas": ["CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 14,
+    "category": "Entity Type",
+    "guideline": "Government servant.",
+    "embedding_text": "Financial activity involving government employees, public officials, civil servants, PSU employees, or other public sector personnel. Transactions requiring scrutiny for disproportionate assets, unexplained income, or potential corruption-related financial activity.",
+    "target_leas": ["CBDT", "CBI", "CVC", "State Chief Secretary"],
+    "conditions": [
+      "CBI and CVC only for corruption cases within jurisdiction.",
+      "CBDT only for lower-value govt teacher/PSU employee cases."
+    ]
+  },
+  {
+    "id": 15,
+    "category": "Entity Type",
+    "guideline": "Cooperative bank, DCCB, State Cooperative Bank or RRB.",
+    "embedding_text": "Transactions involving cooperative banks, district central cooperative banks (DCCB), state cooperative banks, regional rural banks (RRB), or financial activity routed through cooperative banking institutions.",
+    "target_leas": ["RBI", "CBDT", "NABARD"],
+    "conditions": []
+  },
+  {
+    "id": 16,
+    "category": "Entity Type",
+    "guideline": "Credit cooperative society.",
+    "embedding_text": "Financial activity involving credit cooperative societies, cooperative credit institutions, member-based lending organizations, thrift societies, or cooperative financial entities engaged in deposit and lending activities.",
+    "target_leas": ["CBDT", "State Chief Secretary"],
+    "conditions": []
+  },
+  {
+    "id": 17,
+    "category": "Entity Type",
+    "guideline": "NBFC or bank.",
+    "embedding_text": "Transactions involving non-banking financial companies (NBFCs), banks, financial institutions, lending companies, housing finance companies, or regulated financial intermediaries providing credit or financial services.",
+    "target_leas": ["RBI", "CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 18,
+    "category": "Entity Type",
+    "guideline": "Educational, social, cultural or religious trusts.",
+    "embedding_text": "Transactions involving charitable trusts, educational trusts, religious organizations, social welfare trusts, cultural institutions, or non-profit trusts. Financial activity associated with trust accounts, donations, grants, or trust-managed funds.",
+    "target_leas": ["CBDT", "IB"],
+    "conditions": ["IB only if terror financing suspicion exists."]
+  },
+  {
+    "id": 19,
+    "category": "Entity Type",
+    "guideline": "NGOs.",
+    "embedding_text": "Financial activity involving non-governmental organizations (NGOs), voluntary organizations, charitable institutions, non-profit entities, or organizations receiving domestic or foreign contributions, grants, or donations.",
+    "target_leas": ["CBDT", "IB", "MHA - Foreigners Division"],
+    "conditions": ["MHA if foreign remittance received."]
+  },
+  {
+    "id": 20,
+    "category": "Entity Type",
+    "guideline": "Foreign diplomat.",
+    "embedding_text": "Transactions involving foreign diplomats, embassy officials, diplomatic missions, consular staff, international representatives, or foreign government personnel enjoying diplomatic privileges or official status.",
+    "target_leas": ["MEA", "IB"],
+    "conditions": []
+  },
+  {
+    "id": 21,
+    "category": "Entity Type",
+    "guideline": "Gaming or betting transactions.",
+    "embedding_text": "Financial activity involving online betting, gambling platforms, casinos, wagering services, fantasy gaming, gaming operators, or betting-related fund transfers. Transactions associated with gambling proceeds, betting payments, gaming wallets, or unregulated gaming activities.",
+    "target_leas": ["CBDT", "State Police", "ED", "DGGI"],
+    "conditions": [
+      "State Police if illegality suspected.",
+      "ED for foreign remittances.",
+      "DGGI for operator/service provider."
+    ]
+  },
+  {
+    "id": 22,
+    "category": "Entity Type",
+    "guideline": "Cryptocurrency transactions.",
+    "embedding_text": "Transactions involving cryptocurrency, virtual digital assets, bitcoin, ethereum, stablecoins, crypto exchanges, digital wallets, blockchain-based assets, or conversion between fiat currency and crypto assets. Financial activity related to virtual asset trading or transfers.",
+    "target_leas": ["CBDT", "ED", "DGGI"],
+    "conditions": [
+      "ED for foreign remittances.",
+      "DGGI for exchange/operator."
+    ]
+  },
+  {
+    "id": 23,
+    "category": "Entity Type",
+    "guideline": "Lottery fraud.",
+    "embedding_text": "Financial activity linked to lottery scams, prize fraud, lucky draw schemes, fake winnings, advance fee fraud, or fraudulent prize claims. Transactions involving deception through false lottery or reward schemes.",
+    "target_leas": ["State Police"],
+    "conditions": []
+  },
+  {
+    "id": 24,
+    "category": "Entity Type",
+    "guideline": "Family trust with transfers among trustees and family.",
+    "embedding_text": "Transactions involving family trusts, trustee accounts, transfers among trustees or family members, inter-family movement of funds, wealth management structures, succession planning, or family-controlled trust arrangements.",
+    "target_leas": ["CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 25,
+    "category": "Entity Type",
+    "guideline": "Purchase or sale of property.",
+    "embedding_text": "Financial activity involving purchase, sale, transfer, or investment in real estate, land, residential or commercial property. Property-related payments, real estate transactions, or movement of funds associated with immovable assets.",
+    "target_leas": ["CBDT", "ED"],
+    "conditions": ["ED only if predicate offence indicated."]
+  },
+  {
+    "id": 26,
+    "category": "Entity Type",
+    "guideline": "Forex dealer.",
+    "embedding_text": "Transactions involving foreign exchange dealers, money changers, currency exchange businesses, forex brokers, or authorized foreign exchange providers. Financial activity related to currency conversion, forex trading, or cross-currency transactions.",
+    "target_leas": ["CBDT", "ED", "RBI"],
+    "conditions": ["ED if underlying offence or structured foreign transfers."]
+  },
+  {
+    "id": 27,
+    "category": "Entity Type",
+    "guideline": "Manufacturing or supply of goods/services in specified sectors.",
+    "embedding_text": "Business activity involving jewellery, construction, builders, automobile parts, plastics, steel, chemicals, tobacco, manpower supply, business support services, auxiliary services, or other specified manufacturing and service sectors. Transactions associated with GST-registered commercial operations.",
+    "target_leas": ["DGGI", "CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 28,
+    "category": "Transaction Pattern",
+    "guideline": "High-value round-about domestic transactions.",
+    "embedding_text": "Funds moving through multiple domestic accounts before returning to the originating party or related entities. Circular fund movement, layering, round tripping, repeated transfers among connected accounts, artificial transaction chains, and movement of funds without genuine commercial purpose.",
+    "target_leas": ["CBDT", "DGGI"],
+    "conditions": ["DGGI if GST taxable business."]
+  },
+  {
+    "id": 29,
+    "category": "Transaction Pattern",
+    "guideline": "High-volume inflow/outflow in newly opened account.",
+    "embedding_text": "Newly opened account receiving high-volume electronic credits followed by immediate outward transfers. Rapid inflow and outflow of funds indicating pass-through account, mule account, temporary fund parking, unusually high transaction velocity, multiple counterparties, and no apparent economic rationale.",
+    "target_leas": ["CBDT", "DGGI"],
+    "conditions": ["DGGI if GST taxable business."]
+  },
+  {
+    "id": 30,
+    "category": "Transaction Pattern",
+    "guideline": "Unusually high cash deposits.",
+    "embedding_text": "Large or frequent cash deposits significantly exceeding the customer's normal transaction pattern, declared income, or business profile. Sudden increase in cash deposits, unexplained cash accumulation, unusual cash-intensive activity, and cash transactions lacking an apparent economic rationale.",
+    "target_leas": ["CBDT", "DGGI"],
+    "conditions": ["DGGI if GST taxable business."]
+  },
+  {
+    "id": 31,
+    "category": "Transaction Pattern",
+    "guideline": "Unusually high cash withdrawals.",
+    "embedding_text": "Large or frequent cash withdrawals significantly exceeding the customer's normal transaction pattern, declared income, or business profile. Sudden depletion of account balances through cash, unusual cash-intensive withdrawals, unexplained cash movement, and withdrawals lacking an apparent business or economic purpose.",
+    "target_leas": ["CBDT", "DGGI"],
+    "conditions": ["DGGI if GST taxable business."]
+  },
+  {
+    "id": 32,
+    "category": "Transaction Pattern",
+    "guideline": "Transactions inconsistent with declared income.",
+    "embedding_text": "Transactions disproportionate to the customer's declared income, occupation, business profile, or financial capacity. Unexplained turnover, unusually high account activity, income mismatch, disproportionate transaction volume, and financial behaviour lacking an apparent economic rationale.",
+    "target_leas": ["CBDT", "DGGI"],
+    "conditions": ["DGGI if GST taxable business."]
+  },
+  {
+    "id": 33,
+    "category": "Transaction Pattern",
+    "guideline": "Cash deposits/withdrawals across multiple cities.",
+    "embedding_text": "Cash deposits or withdrawals conducted across multiple cities or geographically dispersed locations. Unusual multi-location cash activity indicating possible cash movement, layering, coordinated operations, or geographically distributed transactions inconsistent with the customer's normal profile.",
+    "target_leas": ["State Police", "IB"],
+    "conditions": ["IB for border/sensitive locations."]
+  },
+  {
+    "id": 34,
+    "category": "Transaction Pattern",
+    "guideline": "FICN deposits.",
+    "embedding_text": "Transactions involving Fake Indian Currency Notes (FICN), counterfeit currency deposits, forged banknotes, suspected fake cash, or circulation of counterfeit Indian currency through the banking system.",
+    "target_leas": ["IB", "State Police", "NIA", "DRI"],
+    "conditions": []
+  },
+  {
+    "id": 35,
+    "category": "Transaction Pattern",
+    "guideline": "Transactions with unrelated business sectors.",
+    "embedding_text": "Transactions involving counterparties, suppliers, customers, or beneficiaries unrelated to the customer's declared business activity or industry. Business profile mismatch, inconsistent commercial relationships, unusual sector exposure, and payments lacking an apparent business purpose.",
+    "target_leas": ["CBDT", "DGGI"],
+    "conditions": []
+  },
+  {
+    "id": 36,
+    "category": "Transaction Pattern",
+    "guideline": "High-value funneling between multiple accounts.",
+    "embedding_text": "High-value transfers from multiple accounts into a single account or rapid dispersal from one account to numerous beneficiaries. Funnel account or concentration account behaviour involving many-to-one transfers, one-to-many transfers, aggregation, distribution, and movement of funds through intermediary accounts.",
+    "target_leas": ["CBDT", "DGGI"],
+    "conditions": ["DGGI if GST taxable business."]
+  },
+  {
+    "id": 37,
+    "category": "Transaction Pattern",
+    "guideline": "Domestic remittances followed by immediate foreign remittances.",
+    "embedding_text": "Domestic fund transfers immediately followed by outward foreign remittances or international payments. Cross-border layering, rapid movement of funds across jurisdictions, import-export related payments, and international fund transfers lacking an apparent commercial rationale.",
+    "target_leas": ["CBDT", "DRI", "ED", "DGGI"],
+    "conditions": []
+  },
+  {
+    "id": 38,
+    "category": "Transaction Pattern",
+    "guideline": "Pending or fake Bills of Entry.",
+    "embedding_text": "Transactions supported by pending, fake, forged, manipulated, or non-genuine Bills of Entry or import documents. Suspicious import payments, customs documentation irregularities, bogus trade documents, and potential trade-based money laundering.",
+    "target_leas": ["CBDT", "DRI", "ED", "DGGI"],
+    "conditions": []
+  },
+  {
+    "id": 39,
+    "category": "Transaction Pattern",
+    "guideline": "Spike in inward foreign remittances followed by transfers.",
+    "embedding_text": "Sudden increase in inward foreign remittances followed by immediate transfers or rapid dispersal of funds. Foreign inward remittances exhibiting layering, pass-through behaviour, high transaction velocity, or movement of funds without an apparent economic purpose.",
+    "target_leas": ["State Police", "CBDT", "IB"],
+    "conditions": ["IB if terror financing suspected."]
+  },
+  {
+    "id": 40,
+    "category": "Transaction Pattern",
+    "guideline": "Stock investments disproportionate to income.",
+    "embedding_text": "Investment in shares, equities, securities, or stock market instruments disproportionate to the customer's declared income, financial profile, or known source of funds. High-value securities investments indicating unexplained wealth or disproportionate financial activity.",
+    "target_leas": ["CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 41,
+    "category": "Transaction Pattern",
+    "guideline": "Insurance investments disproportionate to income.",
+    "embedding_text": "High-value insurance premiums, policies, or investment-linked insurance products inconsistent with the customer's declared income, occupation, or financial profile. Insurance investments indicating unexplained wealth, disproportionate financial capacity, or suspicious investment behaviour.",
+    "target_leas": ["CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 42,
+    "category": "Transaction Pattern",
+    "guideline": "Reversal trading in options.",
+    "embedding_text": "Options or derivatives transactions exhibiting reversal trading, synchronized trades, artificial losses or profits, circular trading, market manipulation, or coordinated securities transactions designed to conceal beneficial ownership or generate fictitious gains or losses.",
+    "target_leas": ["CBDT", "SEBI"],
+    "conditions": []
+  },
+  {
+    "id": 43,
+    "category": "Transaction Pattern",
+    "guideline": "High-value offline stock transactions.",
+    "embedding_text": "High-value offline or manually executed securities transactions involving shares, equities, or stock transfers outside normal electronic trading platforms. Off-market share transfers, physical securities movement, or unusual investment activity requiring regulatory scrutiny.",
+    "target_leas": ["CBDT", "SEBI"],
+    "conditions": []
+  },
+  {
+    "id": 44,
+    "category": "Transaction Pattern",
+    "guideline": "Company nonexistent at registered address.",
+    "embedding_text": "Company not operating from its registered address or lacking genuine business operations. Shell company, fake business entity, bogus registration, non-existent office, no employees, paper company, or business established solely for financial transactions.",
+    "target_leas": ["CBDT", "SFIO", "DGGI"],
+    "conditions": []
+  },
+  {
+    "id": 45,
+    "category": "Transaction Pattern",
+    "guideline": "Importer/exporter nonexistent at address.",
+    "embedding_text": "Importer or exporter not operating from the declared business address or lacking genuine trade operations. Fake importer, fake exporter, shell trading entity, bogus import-export business, or non-existent commercial establishment involved in international trade.",
+    "target_leas": ["DRI", "ED", "CBDT", "DGGI"],
+    "conditions": []
+  },
+  {
+    "id": 46,
+    "category": "Transaction Pattern",
+    "guideline": "Multiple accounts with common contact number.",
+    "embedding_text": "Multiple customer accounts linked through a common mobile number, telephone number, or contact details. Shared contact information indicating account mule networks, synthetic identities, coordinated account operations, or interconnected financial relationships.",
+    "target_leas": ["CBDT", "DGGI"],
+    "conditions": ["DGGI if manufacturing/trade/services."]
+  },
+  {
+    "id": 47,
+    "category": "Transaction Pattern",
+    "guideline": "Identity theft.",
+    "embedding_text": "Transactions involving identity theft, impersonation, stolen identity, forged identity documents, fake PAN, fake Aadhaar, forged passport, synthetic identity, account opening using false credentials, or unauthorized use of another person's identity.",
+    "target_leas": ["State Police", "CBDT", "IB", "CBI"],
+    "conditions": [
+      "CBDT for PAN misuse.",
+      "IB for fake passport by foreign national.",
+      "CBI for fake passport by Indian national."
+    ]
+  },
+  {
+    "id": 48,
+    "category": "Transaction Pattern",
+    "guideline": "LRS transactions using common address or multiple accounts.",
+    "embedding_text": "Liberalised Remittance Scheme (LRS) transactions involving multiple accounts sharing a common address or related customer information. Structured outward remittances, coordinated foreign transfers, common-address remittance activity, or possible misuse of LRS limits.",
+    "target_leas": ["CBDT", "ED"],
+    "conditions": []
+  },
+  {
+    "id": 49,
+    "category": "Transaction Pattern",
+    "guideline": "Suspicious agricultural income.",
+    "embedding_text": "Agricultural income declared without corresponding farming activity, land ownership, or genuine agricultural operations. Suspected misuse of agricultural income exemptions, fake farm income, unexplained agricultural receipts, or tax evasion through false agricultural earnings.",
+    "target_leas": ["CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 50,
+    "category": "Transaction Pattern",
+    "guideline": "Purchase of multiple demand drafts.",
+    "embedding_text": "Frequent or high-value purchase of multiple demand drafts, banking instruments, or negotiable payment instruments. Structured acquisition of demand drafts, unusual banking instrument activity, or repeated purchases inconsistent with the customer's profile.",
+    "target_leas": ["CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 51,
+    "category": "Transaction Pattern",
+    "guideline": "Loan repayment in cash.",
+    "embedding_text": "Loan repayments made through cash instead of normal banking channels. Cash settlement of loans, large cash repayments, unusual cash servicing of credit facilities, or repayment behaviour inconsistent with the customer's financial profile or expected transaction pattern.",
+    "target_leas": ["CBDT"],
+    "conditions": []
+  },
+  {
+    "id": 52,
+    "category": "Cyber Fraud",
+    "guideline": "Unauthorized credit card transaction due to OTP compromise and social engineering.",
+    "embedding_text": "Unauthorized credit card transactions resulting from phishing, OTP compromise, social engineering, account takeover, or customer deception. Card-not-present fraud, unauthorized online purchases, gift card fraud, compromised mobile devices, cyber-enabled financial fraud, customer-reported cybercrime, and digital payment misuse.",
+    "target_leas": ["Cyber Crime Cell"],
+    "conditions": []
+  }
+]
