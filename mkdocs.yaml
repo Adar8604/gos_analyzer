@@ -17,6 +17,8 @@ plugins:
 
 nav:
   - Home: index.md
+  - Tutorials:
+      - Getting Started: tutorials/getting-started.md
   - API:
       - Extractor: api/extractor.md
       - Gliner: api/gliner.md
