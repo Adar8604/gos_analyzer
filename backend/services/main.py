@@ -303,6 +303,42 @@ def chunk_transaction_text(text: str, max_chars: int = 2500) -> list:
 
 def analyze_gos(gos, analysis_type, labels=None):
 
+    """
+        Analyze a GOS report using the selected analysis module.
+
+        Supports summary and offence analysis through the configured LLM
+        prompts, transaction analysis using a hybrid LLM and regex-based
+        extraction pipeline, named entity recognition, and keyword
+        highlighting.
+
+        Parameters
+        ----------
+        gos : str
+            GOS report text to analyze.
+        analysis_type : str
+            Analysis module to execute. Supported values are ``"summary"``,
+            ``"offence"``, ``"transaction"``, ``"ner"``, and
+            ``"keyword_search"``.
+        labels : list of str, optional
+            Labels used by NER extraction or keywords used for keyword
+            highlighting. Required for ``"keyword_search"`` and optional
+            for ``"ner"``.
+
+        Yields
+        ------
+        str
+            Analysis results formatted for display in the frontend.
+            Depending on ``analysis_type``, the output may contain a
+            generated response, transaction tables, extracted entities,
+            bank details, PAN relationships, or highlighted text.
+
+        Raises
+        ------
+        ValueError
+            If ``analysis_type`` is not supported.
+    """
+
+
     # Summary / Offence
 
     if analysis_type in PROMPTS:

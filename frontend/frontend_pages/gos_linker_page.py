@@ -14,6 +14,18 @@ URI = "neo4j://127.0.0.1:7687"
 AUTH = ("neo4j", "123456789")
 
 def gos_linker_page():
+    """
+        Render the GOS Linker interface and generate an interactive linkage graph.
+
+        Provides a Streamlit interface for uploading multiple GOS reports,
+        specifying report and GOS-text column names, and generating a Neo4j-based
+        entity relationship graph. Uploaded files are processed in an isolated
+        session to prevent data from previous runs from being merged into the
+        current graph.
+
+        The generated PyVis visualization is embedded directly in the Streamlit
+        application and the temporary HTML output is removed after rendering.
+    """
     st.markdown("### Upload Files for Graph Linkage")
     
     # Optional inputs in case the column names change

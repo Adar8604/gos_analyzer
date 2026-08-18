@@ -32,6 +32,15 @@ from services.sqa.segmenter import semantic_segment
 from services.sqa import ui
 
 def str_quality_assessment_page():
+    """
+        Render the STR Quality Assessment interface and evaluate an STR document.
+
+        Accepts an STR in CSV format, extracts structured fields, scores the report
+        against the configured quality parameters, semantically segments the text,
+        retrieves relevant regulatory or investigative guidelines, and renders the
+        final quality assessment and LEA mapping results in the Streamlit interface.
+    """
+        
     st.markdown("<div class='section-label'>Upload Source Document</div>", unsafe_allow_html=True)
     str_csv = st.file_uploader(label="Upload an STR", type=['csv'], label_visibility="collapsed")
     

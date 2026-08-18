@@ -1,8 +1,11 @@
 # Python
-__pycache__
+__pycache__/
+*.py[cod]
 
 # Virtual environments
-.venv
+.venv/
+venv/
+env/
 
 # Test files
 Test/
@@ -11,5 +14,9 @@ Test/
 .vscode/
 .idea/
 
+# macOS
+.DS_Store
+
 # Environment / secrets
 .env
+.env.*

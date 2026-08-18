@@ -1,3 +1,12 @@
+"""
+    Financial Intelligence Workspace application entry point.
+
+    Configures the Streamlit application, initializes shared session state,
+    provides navigation between the GOS Analyzer, GOS Linker, and STR Quality
+    Assessment modules, and routes user requests to the corresponding frontend
+    pages.
+"""
+
 import sys
 from datetime import datetime
 from pathlib import Path

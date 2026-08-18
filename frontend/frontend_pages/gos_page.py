@@ -36,6 +36,29 @@ except ImportError:
 
 
 def gos_analyzer_page(input_mode, combo_key, selected_keys, extra_params_for):
+
+    """
+        Render the GOS Analyzer interface and execute the selected analyses.
+
+        Supports interactive text-based analysis and batch processing of Excel
+        or CSV files. Selected analysis modules are executed through the backend
+        analysis pipeline, with results streamed to the interface and optionally
+        exported as a consolidated text or CSV file.
+
+        Parameters
+        ----------
+        input_mode : str
+            Input mode selected by the user. Supported modes are ``"Text Input"``
+            and ``"Excel Upload"``.
+        combo_key : tuple
+            Hashable key representing the selected combination of analysis types,
+            used to cache text-analysis results in Streamlit session state.
+        selected_keys : list of str
+            Identifiers of the analysis modules selected by the user.
+        extra_params_for : callable
+            Function that returns additional parameters required by a selected
+            analysis module, such as NER labels or keyword-search terms.
+    """
     if input_mode == "Text Input":
         st.markdown("<div class='section-label'>Ground of Suspicion (GOS)</div>", unsafe_allow_html=True)
         gos_text = st.text_area("Ground of Suspicion", placeholder="Paste or enter the ground of suspicion narrative here.", label_visibility="collapsed")

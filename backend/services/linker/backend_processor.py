@@ -12,8 +12,39 @@ FIU_LINKABLE_ENTITIES = {
 
 def process_and_visualize(file_paths, driver, session_id, id_col="reportId", gos_col="GOS"):
     """
-    Main pipeline using session_id to prevent data overlap between users/refreshes.
+        Process GOS reports and generate an interactive entity-linkage graph.
+
+        Reads GOS reports from CSV or Excel files, extracts linkable entities
+        using the regex-based NER extractor, stores report-entity relationships
+        in Neo4j, and generates a session-specific PyVis visualization.
+
+        Parameters
+        ----------
+        file_paths : iterable of pathlib.Path
+            Paths to the input CSV or Excel files containing GOS reports.
+        driver : neo4j.Driver
+            Active Neo4j driver used for storing and querying graph data.
+        session_id : str
+            Unique identifier used to isolate graph data for the current
+            processing session.
+        id_col : str, optional
+            Name of the column containing the GOS report identifier.
+            Defaults to ``"reportId"``.
+        gos_col : str, optional
+            Name of the column containing the GOS report text.
+            Defaults to ``"GOS"``.
+
+        Returns
+        -------
+        str
+            Path to the generated interactive PyVis HTML graph.
+
+        Raises
+        ------
+        ValueError
+            If an input file has an unsupported file format.
     """
+
     # 1. Clear ONLY the previous graph data for THIS specific session
     with driver.session() as session:
         session.run("MATCH (n {session_id: $session_id}) DETACH DELETE n", session_id=session_id)
@@ -77,9 +108,23 @@ def _ingest_batch_to_neo4j(df, id_col, gos_col, driver, session_id):
 
 def _generate_filtered_graph(driver, output_path, session_id):
     """
-    Queries the DB for ONLY interconnected nodes for the specific session,
-    and generates Pyvis HTML.
+        Generate an interactive graph of shared entities across GOS reports.
+
+        Queries Neo4j for entities that are linked to multiple GOS reports
+        within the specified session and renders the resulting relationships
+        as an interactive PyVis network.
+
+        Parameters
+        ----------
+        driver : neo4j.Driver
+            Active Neo4j driver used to query graph data.
+        output_path : str
+            Destination path for the generated PyVis HTML file.
+        session_id : str
+            Session identifier used to restrict the graph to the current
+            processing session.
     """
+
     query = """
     MATCH (e:Entity {session_id: $session_id})
     WHERE COUNT { (e)<--() } > 1
