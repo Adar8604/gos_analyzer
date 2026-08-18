@@ -15,7 +15,7 @@ cd /Users/adarshkumar/Desktop/gos_analyzer
 streamlit run frontend/app.py --server.port 8502 &
 
 # Run MkDocs
-mkdocs serve --open &
+mkdocs serve --dev-addr 127.0.0.1:8503 --open &
 
 echo "Press Enter to exit..."
 read
