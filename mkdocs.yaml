@@ -29,7 +29,7 @@ nav:
       - Gliner Service: api/ner/gliner_service.md
       - Account IFSC Extractor: api/ner/account_ifsc_extractor.md
       - IFSC Mapper: api/ner/ifsc_mapper.md
-      - Regex Extractor: api/ner/regex-extractor.md
+      - Regex Extractor: api/ner/regex_extractor.md
       - Formatter: api/ner/formatter.md
     - SQA:
       - Retreiver: api/sqa/retriever.md
