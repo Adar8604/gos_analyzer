@@ -4,14 +4,7 @@ GOS Analyzer is designed to run locally using Ollama and Neo4j. After the initia
 
 ## Setup
 
-### 1. Clone the repository
-
-```bash
-git clone <YOUR_REPOSITORY_URL>
-cd gos_analyzer
-```
-
-### 2. Create a Python virtual environment
+### 1. Create a Python virtual environment
 
 #### Windows
 
@@ -27,7 +20,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Install Ollama
+### 2. Install Ollama
 
 Download and install Ollama from:
 
@@ -42,7 +35,7 @@ ollama pull gemma3:4b
 
 Make sure Ollama is running before starting GOS Analyzer.
 
-### 4. Install Neo4j Desktop
+### 3. Install Neo4j Desktop
 
 Download and install Neo4j Desktop from:
 
@@ -57,7 +50,7 @@ Password: 123456789
 
 Start the Neo4j instance before running GOS Analyzer.
 
-### 5. Install Python dependencies
+### 4. Install Python dependencies
 
 ```bash
 pip install -r requirements.txt
