@@ -337,9 +337,7 @@ class RegexExtractor:
                 "Score": score
             })
 
-        # ----------------------------
         # Account Numbers
-        # ----------------------------
 
         ACCOUNT_PATTERN = re.compile(
             r'\b(?<!\d)\d{9,18}(?!\d)'
@@ -373,30 +371,6 @@ class RegexExtractor:
                 "Score": 1.0
             })
 
-
-        # Amount
-        # amount_patterns = [
-
-        #     r"₹\s?\d[\d,]*(?:\.\d+)?\s*(?:lakh|lakhs|lac|lacs|crore|crores|cr|thousand|million)?",
-
-        #     r"INR\s+\d[\d,]*(?:\.\d+)?\s*(?:lakh|lakhs|lac|lacs|crore|crores|cr|thousand|million)?",
-
-        #     r"Rs\.?\s*\d[\d,]*(?:\.\d+)?\s*(?:lakh|lakhs|lac|lacs|crore|crores|cr|thousand|million)?"
-        # ]
-
-        # for pattern in amount_patterns:
-
-        #     for match in re.finditer(
-        #         pattern,
-        #         text,
-        #         flags=re.IGNORECASE
-        #     ):
-        #         entities.append({
-        #             "Entity": match.group().strip(),
-        #             "Tag": "Amount",
-        #             "Score": 1.0
-        #         })
-                
         # Dates
         date_patterns = [
 

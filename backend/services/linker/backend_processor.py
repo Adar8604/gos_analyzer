@@ -1,5 +1,4 @@
 import pandas as pd
-from neo4j import GraphDatabase
 from pyvis.network import Network
 import os
 from pathlib import Path
@@ -195,7 +194,7 @@ def _generate_filtered_graph(driver, output_path, session_id):
                 color="#AAAAAA"
             )
             
-    # Restored your exact JSON layout options
+    # Restored exact JSON layout options
     net.set_options("""
     {
       "physics": {

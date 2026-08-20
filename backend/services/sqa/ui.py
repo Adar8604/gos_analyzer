@@ -2,18 +2,14 @@ import streamlit as st
 import pandas as pd
 
 
-# =========================
 # Sidebar
-# =========================
 
 def sidebar(model_name):
     with st.sidebar:
         st.write(f"Model Name: {model_name}")
 
 
-# =========================
 # Header
-# =========================
 
 def header():
 
@@ -25,9 +21,7 @@ def header():
     )
 
 
-# =========================
 # LEA Results
-# =========================
 
 def lea_results(lea_results):
 
@@ -65,9 +59,7 @@ def lea_results(lea_results):
             )
 
 
-# =========================
 # Retrieved Context
-# =========================
 
 def retrieved_context(results):
 
@@ -97,9 +89,7 @@ def retrieved_context(results):
     )
 
 
-# =========================
 # Overall Quality
-# =========================
 
 def overall_results(results):
 
@@ -148,9 +138,7 @@ def overall_results(results):
     st.divider()
 
 
-# =========================
 # Parameter Assessment
-# =========================
 
 def parameter_tabs(parameters, results):
 
@@ -207,9 +195,7 @@ def parameter_tabs(parameters, results):
             )
 
 
-# =========================
 # Summary
-# =========================
 
 def summary(
     parameters,
@@ -238,9 +224,7 @@ def summary(
     )
 
 
-# =========================
 # Complete Page
-# =========================
 
 def render_results(
     parameters,

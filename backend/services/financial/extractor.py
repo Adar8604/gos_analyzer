@@ -3,10 +3,7 @@ import json
 from typing import List, Optional
 from pydantic import BaseModel, Field
 
-# ==========================================
 # 1. TRANSACTION ONLY DATA SCHEMAS
-# ==========================================
-
 class TransactionSummaryMetrics(BaseModel):
     total_credit_summation: float = Field(..., description="Total inflows/credits in INR")
     total_debit_summation: float = Field(..., description="Total outflows/debits in INR")
@@ -26,9 +23,7 @@ class TransactionAnalysisPayload(BaseModel):
     metrics: TransactionSummaryMetrics
     ledger: List[LedgerEntry]
 
-# ==========================================
-# 2. TARGETED PROCESSING PIPELINE
-# ==========================================
+# 2. PROCESSING PIPELINE
 
 def extract_transaction_segment(raw_gos_text: str) -> str:
     """
@@ -68,9 +63,7 @@ Return ONLY raw executable JSON. Do not include markdown wrappers or conversatio
 """
     return prompt
 
-# ==========================================
 # 3. REGEX HEURISTIC SAFETY NET
-# ==========================================
 
 def parse_ledger_via_regex(text: str) -> List[dict]:
     """
@@ -99,9 +92,7 @@ def parse_ledger_via_regex(text: str) -> List[dict]:
         })
     return ledger
 
-# ==========================================
 # 4. ANALYSER TAB INTEGRATION INTERFACE
-# ==========================================
 
 def process_transaction_tab_data(full_gos_text: str, local_llm_client) -> TransactionAnalysisPayload:
     """
